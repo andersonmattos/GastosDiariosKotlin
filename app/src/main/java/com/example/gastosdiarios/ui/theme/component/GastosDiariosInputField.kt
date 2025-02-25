@@ -4,7 +4,6 @@ package com.example.gastosdiarios.ui.theme.component
 import android.icu.text.DecimalFormat
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -137,11 +136,11 @@ class CurrencyAmountInputVisualTransformation(
 @Composable
 fun ValueInputField() {
     var number by remember { mutableStateOf("") }
-    val symbols = DecimalFormat().decimalFormatSymbols
 
     TextField(
         modifier = Modifier.fillMaxWidth(),
         value = number,
+        maxLines = 1,
         onValueChange = {
             number = if (it.startsWith("0")) {
             ""
